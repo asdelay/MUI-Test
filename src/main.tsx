@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import App from "./App";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import "./i18n";
 
 const theme = createTheme({
   colorSchemes: {
