@@ -1,8 +1,9 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import App from "./App";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import "./i18n";
+import { MainPage } from "./pages/MainPage";
+import PageLayout from "./components/PageLayout";
 
 const theme = createTheme({
   colorSchemes: {
@@ -15,7 +16,9 @@ createRoot(document.getElementById("root")!).render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<PageLayout />}>
+          <Route index element={<MainPage />} />
+        </Route>
       </Routes>
     </ThemeProvider>
   </BrowserRouter>
