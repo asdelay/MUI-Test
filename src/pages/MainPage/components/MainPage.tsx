@@ -1,4 +1,6 @@
-import { useColorScheme, Typography, Box, Button, Paper } from "@mui/material";
+import TourCard from "@/components/TourCard";
+import { TourModule } from "@/modules/TourModule";
+import { useColorScheme, Typography, Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 export const MainPage = () => {
@@ -33,6 +35,7 @@ export const MainPage = () => {
           Nederlands
         </Button>
       </Box>
+      <TourModule />
     </>
   );
 };

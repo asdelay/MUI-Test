@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 const PageLayout = () => {
   return (
     <div>
-      <Container sx={{ height: "100vh" }}>
+      <Container maxWidth="lg">
         <Outlet />
       </Container>
     </div>
