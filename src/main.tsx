@@ -4,6 +4,8 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import "./i18n";
 import { MainPage } from "./pages/MainPage";
 import PageLayout from "./components/PageLayout";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const theme = createTheme({
   colorSchemes: {
@@ -13,13 +15,15 @@ const theme = createTheme({
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-        <Route path="/" element={<PageLayout />}>
-          <Route index element={<MainPage />} />
-        </Route>
-      </Routes>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          <Route path="/" element={<PageLayout />}>
+            <Route index element={<MainPage />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </Provider>
   </BrowserRouter>
 );
