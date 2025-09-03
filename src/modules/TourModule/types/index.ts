@@ -1,8 +1,15 @@
-export interface Tour {
+export interface CityTours {
+    id: number;
     name: string;
-    imageSource: string;
-    lengthInHours: number;
+    tours: Tour[];
+}
+
+export interface Tour {
+    id: number;
+    name: string;
+    duration: number;
     rating: number;
-    reviews: number;
-    startingPrice: number
+    numberOfReviews: number;
+    price: number;
+    image: string;
 }

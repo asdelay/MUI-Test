@@ -1,69 +1,105 @@
-import type { Tour } from "@/modules/TourModule/types";
+import type { CityTours } from "@/modules/TourModule/types";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface TourState {
-    tours: Tour[]
+    tours: CityTours[]
 }
 
 const initialState: TourState = {
     tours: [
-        {
-            name: 'Dubrovnik', 
-            imageSource: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg/250px-The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg', 
-            lengthInHours: 5,
-            rating: 4.7,
-            reviews: 456,
-            startingPrice: 150
-        },
-        {
-            name: 'Paris City Highlights',
-            imageSource: 'https://img.static-af.com/transform/45cb9a13-b167-4842-8ea8-05d0cc7a4d04/',
-            lengthInHours: 4,
-            rating: 4.8,
-            reviews: 892,
-            startingPrice: 120
-        },
-        {
-            name: 'Santorini Sunset Tour',
-            imageSource: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/f6/2d/d1.jpg',
-            lengthInHours: 3,
-            rating: 4.9,
-            reviews: 674,
-            startingPrice: 100
-        },
-        {
-            name: 'Kyoto Temples & Gardens',
-            imageSource: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRckLqXX-JW1laoix4CUeM17sg22OeF5kA9Mw&s',
-            lengthInHours: 6,
-            rating: 4.7,
-            reviews: 532,
-            startingPrice: 140
-        },
-        {
-            name: 'New York City Skyline Tour',
-            imageSource: 'https://image.newyork.nl/wp-content/uploads/2020/03/New-York-Helicopter-Tour-2.eric_both.bottom_right.jpg.webp',
-            lengthInHours: 5,
-            rating: 4.6,
-            reviews: 1012,
-            startingPrice: 160
-        },
-        {
-            name: 'Cairo Pyramids & Sphinx',
-            imageSource: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/250px-Kheops-Pyramid.jpg',
-            lengthInHours: 7,
-            rating: 4.8,
-            reviews: 789,
-            startingPrice: 180
-        }
+  {
+    "id": 1,
+    "name": "Niagara Falls",
+    "tours": [
+      {
+        "id": 1,
+        "name": "Immerse into the Falls",
+        "duration": 5,
+        "rating": 4.5,
+        "numberOfReviews": 462,
+        "price": 465,
+        "image": "https://tcproduction.blob.core.windows.net/media/%7B240f8b72-1159-4fd3-a150-0a837f50ba4a%7D.2573758641_297d6d19fa_o.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Helicopter Over the Falls",
+        "duration": 8,
+        "rating": 3.5,
+        "numberOfReviews": 641,
+        "price": 385,
+        "image": "https://d2ru2mvuh5wx24.cloudfront.net/avtivity_bootstrap/1241/flight_of_angels_3__1920x864.jpg"
+      },
+      {
+        "id": 3,
+        "name": "The Falls at Night",
+        "duration": 2,
+        "rating": 4.5,
+        "numberOfReviews": 133,
+        "price": 144,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEwMXkQ2ZZBeEKRREd_3HhoYbyAuNiJ7vmAA&s"
+      },
+      {
+        "id": 4,
+        "name": "Immerse into the Falls",
+        "duration": 5,
+        "rating": 4.5,
+        "numberOfReviews": 462,
+        "price": 465,
+        "image": "https://tcproduction.blob.core.windows.net/media/%7B240f8b72-1159-4fd3-a150-0a837f50ba4a%7D.2573758641_297d6d19fa_o.jpg"
+      }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Las Vegas",
+    "tours": [
+      {
+        "id": 4,
+        "name": "All Around the World",
+        "duration": 5,
+        "rating": 4.5,
+        "numberOfReviews": 462,
+        "price": 465,
+        "image": "https://assets.simpleviewcms.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg"
+      },
+      {
+        "id": 5,
+        "name": "View the Casinos",
+        "duration": 5,
+        "rating": 4.5,
+        "numberOfReviews": 462,
+        "price": 465,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/532921587.jpg?k=ba59c2bcf1b5d88bd170c507894e109dafbca50ba28817af880c0eec269d88ed&o=&hp=1"
+      },
+      {
+        "id": 6,
+        "name": "Show me the Magic",
+        "duration": 8,
+        "rating": 3.5,
+        "numberOfReviews": 641,
+        "price": 385,
+        "image": "https://footwearnews.com/wp-content/uploads/2020/10/magic-trade-show-las-vegas.jpg"
+      },
+      {
+        "id": 7,
+        "name": "The Falls at Night",
+        "duration": 2,
+        "rating": 4.5,
+        "numberOfReviews": 133,
+        "price": 144,
+        "image": "https://assets.simpleviewcms.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg"
+      }
+    ]
+  }
+]
 }
 
 export const tourSlice = createSlice({
     name: 'tour',
     initialState,
     reducers: {
-        addTour: (state, action: PayloadAction<Tour>) => {
+        addTour: (state, action: PayloadAction<CityTours>) => {
             state.tours.push(action.payload)
         }
     }

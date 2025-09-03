@@ -8,19 +8,25 @@ export const TourModule = () => {
   const tours = useSelector((state: RootState) => state.tour.tours);
   return (
     <>
-      <Typography variant="h3" sx={{ mt: 2 }}>
-        Tours
-      </Typography>
-      <Grid
-        container
-        direction="row"
-        spacing={2}
-        sx={{ my: 1, alignItems: "center" }}
-      >
-        {tours &&
-          tours.length != 0 &&
-          tours.map((tour) => <TourCard key={tour.name} tour={tour} />)}
-      </Grid>
+      {tours.map((tour) => (
+        <div>
+          <Typography variant="h3" sx={{ mt: 2 }}>
+            {tour.name}
+          </Typography>
+          <Grid
+            container
+            direction="row"
+            spacing={2}
+            sx={{ my: 1, alignItems: "center" }}
+          >
+            {tour.tours &&
+              tour.tours.length != 0 &&
+              tour.tours.map((cityTour) => (
+                <TourCard key={cityTour.id} tour={cityTour} />
+              ))}
+          </Grid>
+        </div>
+      ))}
     </>
   );
 };

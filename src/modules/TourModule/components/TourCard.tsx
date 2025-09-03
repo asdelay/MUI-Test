@@ -14,7 +14,7 @@ const TourCard: FC<TourCardProps> = ({ tour }) => {
         <Box
           component="img"
           alt={tour.name}
-          src={tour.imageSource}
+          src={tour.image}
           sx={{
             width: "100%",
             height: "100px",
@@ -29,7 +29,7 @@ const TourCard: FC<TourCardProps> = ({ tour }) => {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <AccessTimeIcon sx={{ width: 15, mr: 0.5 }} />
             <Typography variant="body2" component="p">
-              {tour.lengthInHours} hour{tour.lengthInHours !== 1 && "s"}
+              {tour.duration} hour{tour.duration !== 1 && "s"}
             </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 1 }}>
@@ -44,11 +44,11 @@ const TourCard: FC<TourCardProps> = ({ tour }) => {
               {tour.rating}
             </Typography>
             <Typography variant="caption" component="p">
-              ({tour.reviews} rewiev{tour.reviews !== 1 && "s"})
+              ({tour.numberOfReviews} rewiev{tour.numberOfReviews !== 1 && "s"})
             </Typography>
           </Box>
           <Typography variant="h6" component="h3">
-            From €{tour.startingPrice}
+            From €{tour.price}
           </Typography>
         </Box>
       </Paper>
