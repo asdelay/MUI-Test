@@ -1,5 +1,6 @@
 import { Container, useColorScheme } from "@mui/material";
 import { Outlet } from "react-router";
+import NavBar from "./NavBar";
 
 const PageLayout = () => {
   const { mode } = useColorScheme();
@@ -8,11 +9,12 @@ const PageLayout = () => {
     return null;
   }
   return (
-    <div>
+    <>
+      <NavBar />
       <Container maxWidth="lg">
         <Outlet />
       </Container>
-    </div>
+    </>
   );
 };
 
