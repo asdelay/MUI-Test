@@ -1,22 +1,19 @@
 import type { Tour } from "@/modules/TourModule";
 import { type RootState } from "@/store/store";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ImageCollage from "./ImageCollage";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CustomAccordion from "./Accordion";
+import BottomBooking from "./BottomBooking";
+import { useTranslation } from "react-i18next";
 
 export const TourPage = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const tour: Tour | null = useSelector((state: RootState) => {
     const numericId = Number(id);
-    // first find the city, then find the tour in it
+
     for (const cityTour of state.tour.tours) {
       const found = cityTour.tours.find((t) => t.id === numericId);
       if (found) return found;
@@ -26,7 +23,7 @@ export const TourPage = () => {
   if (!tour)
     return (
       <Box>
-        <Typography>No information found about this tour. Sorry</Typography>
+        <Typography>{t("no-info")}</Typography>
       </Box>
     );
   return (
@@ -35,59 +32,23 @@ export const TourPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
+        mt: 3,
       }}
     >
       <Typography variant="h3">{tour.name}</Typography>
       <ImageCollage mainImage={tour.image} collageData={tour.collageData} />
       <Box sx={{ mt: 3 }}>
-        <Typography variant="h5">About this tour</Typography>
+        <Typography variant="h5">{t("about-this-tour")}</Typography>
         <Typography variant="body1" component="p" sx={{ mt: 1 }}>
           {tour.description}
         </Typography>
       </Box>
 
-      <Box sx={{ my: 3 }}>
-        <Typography variant="h5">Frequently Asked Questions</Typography>
-        <Accordion sx={{ mt: 1 }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1-content"
-            id="panel1-header"
-          >
-            <Typography component="span">Accordion 1</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2-content"
-            id="panel2-header"
-          >
-            <Typography component="span">Accordion 2</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
-        <Accordion defaultExpanded>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3-content"
-            id="panel3-header"
-          >
-            <Typography component="span">Accordion Actions</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
+      <Box sx={{ my: 10 }}>
+        <Typography variant="h6">{t("faq")}</Typography>
+        <CustomAccordion />
       </Box>
+      <BottomBooking />
     </Box>
   );
 };

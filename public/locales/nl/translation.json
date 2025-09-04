@@ -2,5 +2,23 @@
   "welcome": "Welkom bij mijn app",
   "lightTheme": "Licht thema",
   "darkTheme": "Donker thema",
-  "logout": "Uitloggen"
+  "logout": "Uitloggen",
+  "no-info": "Geen informatie gevonden over deze tour. Sorry",
+  "about-this-tour": "Over deze tour",
+  "faq": "Veelgestelde vragen",
+  "faq-1-question": "Wat is inbegrepen in de reissom?",
+  "faq-1-answer": "De prijs dekt meestal vervoer, rondleidingen en toegangstickets voor de belangrijkste bezienswaardigheden die in het reisschema staan vermeld. Maaltijden, persoonlijke uitgaven en optionele activiteiten zijn meestal niet inbegrepen, tenzij anders aangegeven. Controleer altijd de sectie ‘Wat is inbegrepen’ voordat u boekt.",
+  
+  "faq-2-question": "Kan ik mijn boeking annuleren of verzetten?",
+  "faq-2-answer": "Ja, de meeste reizen kunnen tot 24–48 uur voor vertrek zonder kosten worden geannuleerd of verplaatst. Voor last-minute annuleringen kunnen er kosten in rekening worden gebracht. Wij raden aan om het annuleringsbeleid voor uw specifieke reis vooraf te bekijken.",
+  
+  "faq-3-question": "Wat moet ik meenemen op reis?",
+  "faq-3-answer": "Het is het beste om comfortabele kleding, wandelschoenen, een geldig identiteitsbewijs of paspoort (indien vereist) en persoonlijke spullen mee te nemen. Voor buiten- of avondexcursies kunt u afhankelijk van het seizoen en de bestemming ook een jas, zonnebrandcrème of waterfles meenemen.",
+
+  
+  "booking-button": "NU BOEKEN",
+  "booking-title": "Boeking bevestigen",
+  "booking-description": "Weet u zeker dat u dit ticket wilt boeken? Zodra bevestigd, wordt uw reservering verwerkt en kunnen er kosten in rekening worden gebracht.",
+  "booking-cancel": "Annuleren",
+  "booking-confirm": "Bevestigen"
 }

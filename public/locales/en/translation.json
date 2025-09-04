@@ -2,5 +2,23 @@
   "welcome": "Welcome to my app",
   "lightTheme": "Light theme",
   "darkTheme": "Dark theme",
-  "logout": "Log out"
+  "logout": "Log out",
+  "no-info": "No information found about this tour. Sorry",
+  "about-this-tour": "About this tour",
+  "faq": "Frequently Asked Questions",
+  "faq-1-question": "What is included in the trip price?",
+  "faq-1-answer": "The price usually covers transportation, guided tours, and entry tickets to the main attractions listed in the itinerary. Meals, personal expenses, and optional activities may not be included unless specified. Always check the “What’s Included” section before booking.",
+  
+  "faq-2-question": "Can I cancel or reschedule my booking?",
+  "faq-2-answer": "Yes, most trips can be canceled or rescheduled up to 24–48 hours before departure without a fee. For last-minute cancellations, some charges may apply. We recommend reviewing the cancellation policy for your specific trip before booking.",
+  
+  "faq-3-question": "What should I bring on the trip?",
+  "faq-3-answer": "It’s best to bring comfortable clothing, walking shoes, a valid ID or passport (if required), and any personal items you may need. For outdoor or evening tours, consider carrying a jacket, sunscreen, or water bottle depending on the season and destination.",
+
+  
+  "booking-button": "BOOK NOW",
+  "booking-title": "Confirm Booking",
+  "booking-description": "Are you sure you want to book this ticket? Once confirmed, your reservation will be processed and charges may apply.",
+  "booking-cancel": "Cancel",
+  "booking-confirm": "Confirm"
 }
