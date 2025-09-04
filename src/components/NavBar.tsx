@@ -4,6 +4,7 @@ import {
   Divider,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
@@ -17,6 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState, type ReactElement } from "react";
 import ThemeHandler from "./ThemeHandler";
 import LanguageHandler from "./LanguageHandler";
+import { Link as RouterLink } from "react-router";
 
 const HideOnScroll = ({ children }: { children: ReactElement<unknown> }) => {
   const trigger = useScrollTrigger();
@@ -36,9 +38,17 @@ const NavBar = () => {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h4" sx={{ my: 2 }}>
-        Tour App
-      </Typography>
+      <Link
+        sx={{ textDecoration: "none", color: "inherit" }}
+        component={RouterLink}
+        to="/"
+        onClick={handleDrawerToggle}
+      >
+        <Typography variant="h4" sx={{ my: 2 }}>
+          Tour App
+        </Typography>
+      </Link>
+
       <Divider />
       <List>
         <ListItem onClick={handleDrawerToggle} disablePadding>
@@ -79,9 +89,15 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Tour App
-            </Typography>
+            <Link
+              sx={{ textDecoration: "none", color: "inherit", flexGrow: 1 }}
+              component={RouterLink}
+              to="/"
+            >
+              <Typography variant="h6" component="div">
+                Tour App
+              </Typography>
+            </Link>
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
