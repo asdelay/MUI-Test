@@ -17,6 +17,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 import { useState, type ReactElement } from "react";
+import ThemeHandler from "./ThemeHandler";
+import LanguageHandler from "./LanguageHandler";
 
 const HideOnScroll = ({ children }: { children: ReactElement<unknown> }) => {
   const trigger = useScrollTrigger();
@@ -29,7 +31,6 @@ const HideOnScroll = ({ children }: { children: ReactElement<unknown> }) => {
 };
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
 
 const NavBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,13 +43,17 @@ const NavBar = () => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ThemeHandler />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            Languages
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -70,12 +75,15 @@ const NavBar = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Tour App
             </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#fff" }}>
-                  {item}
-                </Button>
-              ))}
+            <Box
+              sx={{
+                display: { xs: "none", sm: "flex" },
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
+              <ThemeHandler />
+              <LanguageHandler />
             </Box>
           </Toolbar>
         </AppBar>

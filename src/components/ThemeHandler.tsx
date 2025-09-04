@@ -1,17 +1,19 @@
 import { Box, Button, useColorScheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 const ThemeHandler = () => {
   const { mode, setMode } = useColorScheme();
   const { t } = useTranslation();
   return (
-    <Box sx={{ mt: 2, display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex", gap: 2 }}>
       {mode === "dark" ? (
         <Button variant="contained" onClick={() => setMode("light")}>
-          {t("lightTheme")}
+          {<LightModeIcon />}
         </Button>
       ) : (
-        <Button variant="outlined" onClick={() => setMode("dark")}>
-          {t("darkTheme")}
+        <Button variant="contained" onClick={() => setMode("dark")}>
+          {<DarkModeIcon />}
         </Button>
       )}
     </Box>

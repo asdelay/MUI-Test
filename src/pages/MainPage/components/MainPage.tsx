@@ -9,8 +9,6 @@ export const MainPage = () => {
   return (
     <>
       <Typography variant="h1">{t("welcome")}</Typography>
-      <ThemeHandler />
-      <LanguageHandler />
       <TourModule />
     </>
   );

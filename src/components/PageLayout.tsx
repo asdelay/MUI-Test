@@ -1,6 +1,6 @@
 import { Container, useColorScheme } from "@mui/material";
 import { Outlet } from "react-router";
-import NavBar from "./NavBar";
+import NavBar from "@/components/NavBar";
 
 const PageLayout = () => {
   const { mode } = useColorScheme();
