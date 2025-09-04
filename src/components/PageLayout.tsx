@@ -11,7 +11,10 @@ const PageLayout = () => {
   return (
     <>
       <NavBar />
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
         <Outlet />
       </Container>
     </>
