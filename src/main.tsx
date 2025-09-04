@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import "./i18n";
 import { MainPage } from "./pages/MainPage";
-import PageLayout from "./pages/MainPage/components/PageLayout";
+import PageLayout from "./components/PageLayout";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { TourPage } from "./pages/TourPage";

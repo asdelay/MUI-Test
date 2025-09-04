@@ -1,5 +1,3 @@
-import LanguageHandler from "@/components/LanguageHandler";
-import ThemeHandler from "@/components/ThemeHandler";
 import { TourModule } from "@/modules/TourModule";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";

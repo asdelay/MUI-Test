@@ -1,14 +1,12 @@
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Slide,
   Toolbar,
   Typography,
@@ -37,21 +35,30 @@ const NavBar = () => {
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box sx={{ textAlign: "center" }}>
+      <Typography variant="h4" sx={{ my: 2 }}>
         Tour App
       </Typography>
       <Divider />
       <List>
-        <ListItem disablePadding>
+        <ListItem onClick={handleDrawerToggle} disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            <ThemeHandler />
+            <Typography variant="h6">Route 1</Typography>
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
+        <ListItem onClick={handleDrawerToggle} disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            Languages
+            <Typography variant="h6">Route 2</Typography>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+        <ListItem disablePadding>
+          <ListItemButton
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <ThemeHandler />
+            <LanguageHandler />
           </ListItemButton>
         </ListItem>
       </List>
@@ -79,7 +86,6 @@ const NavBar = () => {
               sx={{
                 display: { xs: "none", sm: "flex" },
                 alignItems: "center",
-                gap: 2,
               }}
             >
               <ThemeHandler />
